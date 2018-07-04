@@ -6,6 +6,9 @@
 ###
 
 
+# Create your views here.
+import logging
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -18,7 +21,8 @@ from django.views.generic import ListView, UpdateView
 from .forms import NewTopicForm, PostForm
 from .models import Board, Post, Topic
 
-# Create your views here.
+
+logger = logging.getLogger(__name__)
 
 
 @method_decorator(login_required, name="dispatch")
@@ -54,6 +58,7 @@ class TopicListView(ListView):
     paginate_by = 20
 
     def get_context_data(self, **kwargs):
+        logger.info(kwargs)
         kwargs['board'] = self.board
         return super().get_context_data(**kwargs)
 

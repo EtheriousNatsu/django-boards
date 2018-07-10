@@ -153,70 +153,70 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 LOGIN_URL = 'login'
 
 # logging configuration
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'standard': {
-            'format': '%(asctime)s [%(levelname)s] %(name)s %(message)s'
-        }
-    },
-    'handlers': {
-        'default': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/mylog.log'),
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'standard'
-        },
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'standard': {
+#             'format': '%(asctime)s [%(levelname)s] %(name)s %(message)s'
+#         }
+#     },
+#     'handlers': {
+#         'default': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(BASE_DIR, 'logs/mylog.log'),
+#             'maxBytes': 1024*1024*5,  # 5 MB
+#             'backupCount': 5,
+#             'formatter': 'standard'
+#         },
 
-        'request_handler': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/django_request.log'),
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'standard'
-        },
-        'db_backends_handler': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/django_db_backends.log'),
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'standard'
-        },
-        'template_handler': {
-            'level': 'DEBUG',
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/django_template.log'),
-            'maxBytes': 1024*1024*5,  # 5 MB
-            'backupCount': 5,
-            'formatter': 'standard'
-        }
-    },
-    'loggers': {
-        # 配置 root
-        '': {
-            'handlers': ['default'],
-            'level': 'DEBUG',
-            'propagate': True
-        },
-        'django.request': {
-            'handlers': ['request_handler'],
-            'level': 'DEBUG',
-            'propagate': False
-        },
-        'django.db.backends': {
-            'handlers': ['db_backends_handler'],
-            'level': 'DEBUG',
-            'propagate': False
-        },
-        'django.template': {
-            'handlers': ['template_handler'],
-            'level': 'DEBUG',
-            'propagate': False
-        }
-    }
-}
+#         'request_handler': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(BASE_DIR, 'logs/django_request.log'),
+#             'maxBytes': 1024*1024*5,  # 5 MB
+#             'backupCount': 5,
+#             'formatter': 'standard'
+#         },
+#         'db_backends_handler': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(BASE_DIR, 'logs/django_db_backends.log'),
+#             'maxBytes': 1024*1024*5,  # 5 MB
+#             'backupCount': 5,
+#             'formatter': 'standard'
+#         },
+#         'template_handler': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(BASE_DIR, 'logs/django_template.log'),
+#             'maxBytes': 1024*1024*5,  # 5 MB
+#             'backupCount': 5,
+#             'formatter': 'standard'
+#         }
+#     },
+#     'loggers': {
+#         # 配置 root
+#         '': {
+#             'handlers': ['default'],
+#             'level': 'DEBUG',
+#             'propagate': True
+#         },
+#         'django.request': {
+#             'handlers': ['request_handler'],
+#             'level': 'DEBUG',
+#             'propagate': False
+#         },
+#         'django.db.backends': {
+#             'handlers': ['db_backends_handler'],
+#             'level': 'DEBUG',
+#             'propagate': False
+#         },
+#         'django.template': {
+#             'handlers': ['template_handler'],
+#             'level': 'DEBUG',
+#             'propagate': False
+#         }
+#     }
+# }
